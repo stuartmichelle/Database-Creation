@@ -3,7 +3,8 @@
 library(RMySQL)
 leyte <- dbConnect(MySQL(), host="amphiprion.deenr.rutgers.edu", user="michelles", password="larvae168", dbname="Leyte", port=3306)
 
-dbSendQuery(leyte, "CREATE TABLE `anemones` (
+dbSendQuery(leyte, "
+CREATE TABLE `anemones` (
   `anem_table_id` int(11) NOT NULL AUTO_INCREMENT,
   `dive_table_id` int(11) NOT NULL,
   `ObsTime` time NOT NULL,
@@ -16,8 +17,9 @@ dbSendQuery(leyte, "CREATE TABLE `anemones` (
   `oldAnemID` text,
   `AnemID` text,
   `AnemSampleID` text,
-`NumFish` int,
+  `Spp` text,
+  `NumFish` int(11) DEFAULT NULL,
   `Notes` text,
   PRIMARY KEY (`anem_table_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20221 DEFAULT CHARSET=latin1;")
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;")
 
