@@ -15,3 +15,8 @@ where clownfish.ID is not null
 
 pieces <- fetch(pieces, n = -1)
 
+# Change ID to 3 digits (leading zeros)
+pieces$ID <- formatC(pieces$ID, width = 3, format = "d", flag = "0")
+
+id <- paste(pieces$Spp, pieces$`YEAR(diveinfo.Date)`, "_", pieces$ID, sep = "")
+
