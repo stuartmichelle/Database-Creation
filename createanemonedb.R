@@ -5,7 +5,7 @@ leyte <- dbConnect(MySQL(), host="amphiprion.deenr.rutgers.edu", user="michelles
 
 dbSendQuery(leyte, "
 CREATE TABLE `anemones` (
-  `anem_table_id` int(11) NOT NULL AUTO_INCREMENT,
+  `anem_table_id` int(11) NOT NULL,
   `dive_table_id` int(11) NOT NULL,
   `ObsTime` time NOT NULL,
   `Collector` text NOT NULL,
